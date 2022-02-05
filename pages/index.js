@@ -1,8 +1,18 @@
+import Categorybar from "../components/Categorybar";
+import FeaturedItems from "../components/FeaturedItems";
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
+import Newsletter from "../components/Newsletter";
 
 export default function Home() {
   return (
-    <div className='bg-blue-300'>
-      Hello World
-    </div>
+    <>
+      <Navbar />
+      <Categorybar />
+      <FeaturedItems />
+      <FeaturedItems isReversed={true} />
+      <Newsletter />
+      <Footer />
+    </>
   )
 }
