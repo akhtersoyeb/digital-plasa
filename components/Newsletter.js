@@ -1,7 +1,7 @@
 
 export default function Newsletter() {
     return (
-        <div className="my-20 container mx-auto px-4 py-10 border border-slate-200 rounded-lg shadow-md shadow-slate-300/50">
+        <div className="my-20 container max-w-7xl mx-auto px-4 py-10 border border-slate-200 rounded-lg shadow-md shadow-slate-300/50">
             <h1 className="text-3xl font-semibold text-center sm:text-left">
                 Want product news and updates?
             </h1>

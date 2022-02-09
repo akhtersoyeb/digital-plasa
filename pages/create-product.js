@@ -1,5 +1,5 @@
 import { Upload, message } from 'antd';
-import { InboxOutlined } from '@ant-design/icons';
+import { InboxOutlined, FileImageOutlined } from '@ant-design/icons';
 
 import "antd/dist/antd.css"
 
@@ -10,11 +10,31 @@ export default function Example() {
 
   const { Dragger } = Upload;
 
-  const props = {
-    name: 'file',
+  const picturesProps = {
+    name: 'images/*',
     multiple: true,
     listType: "picture",
     maxCount: 3,
+    action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
+    onChange(info) {
+      const { status } = info.file;
+      if (status !== 'uploading') {
+        console.log(info.file, info.fileList);
+      }
+      if (status === 'done') {
+        message.success(`${info.file.name} file uploaded successfully.`);
+      } else if (status === 'error') {
+        message.error(`${info.file.name} file upload failed.`);
+      }
+    },
+    onDrop(e) {
+      console.log('Dropped files', e.dataTransfer.files);
+    },
+  };
+
+  const sourceFileProps = {
+    name: 'file',
+    maxCount: 1,
     action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
     onChange(info) {
       const { status } = info.file;
@@ -83,21 +103,53 @@ export default function Example() {
                       />
                     </div>
                     <p className="mt-2 text-sm text-gray-500">
-                      Max 300 characters. Keep it short and easy to understand.
+                      Max 100 characters. Keep it short and easy to understand.
                     </p>
                   </div>
 
                   <div>
                     <label className="block text-sm font-medium text-gray-700">Pictures</label>
-                    <Dragger {...props}>
+                    <Dragger {...picturesProps}>
                       <p className="ant-upload-drag-icon">
-                        <InboxOutlined />
+                        <FileImageOutlined />
                       </p>
                       <p className="ant-upload-text">Click or drag file to this area to upload</p>
                       <p className="ant-upload-hint">
                         Support for a single or bulk upload. Max limit 3.
                       </p>
-                    </Dragger>,
+                    </Dragger>
+
+                  </div>
+
+                  <div>
+                    <label htmlFor="price" className="block text-sm font-medium text-gray-700">
+                      Price (USA Dollar)
+                    </label>
+                    <div className="mt-1">
+                      <input
+                        id="price"
+                        type={"number"}
+                        name="price"
+                        className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
+                        defaultValue={10.00}
+                      />
+                    </div>
+                    <p className="mt-2 text-sm text-gray-500">
+                      Maximum price can be 1 million dollar (1,000,000 $).
+                    </p>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700">Main File</label>
+                    <Dragger {...picturesProps}>
+                      <p className="ant-upload-drag-icon">
+                        <InboxOutlined />
+                      </p>
+                      <p className="ant-upload-text">Click or drag file to this area to upload</p>
+                      <p className="ant-upload-hint">
+                        Only upload zip file. This file is what the buyer will get.
+                      </p>
+                    </Dragger>
 
                   </div>
                 </div>

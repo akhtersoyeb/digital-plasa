@@ -1,13 +1,26 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { MenuIcon, XIcon} from '@heroicons/react/outline'
+import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/solid'
 
 const navigation = [
-    { name: 'Home', href: '#', current: false },
-    { name: 'Explore', href: '#', current: false },
+    { name: 'Home', href: '/', current: false },
+    { name: 'Explore', href: '/items', current: false },
     { name: 'Contact Us', href: '#', current: false },
+]
+
+const categories = [
+    { name: 'Web Themes & Templates', href: '/items' },
+    { name: 'Wordpress', href: '/items' },
+    { name: 'Mobile App', href: '/items' },
+    { name: 'UI Design', href: '/items' },
+    { name: 'HTML-CSS', href: '/items' },
+    { name: 'JavaScript', href: '/items' },
+    { name: 'Code Snippets', href: '/items' },
+    { name: 'Frontend', href: '/items' },
+    { name: 'Backend', href: '/items' },
+    { name: 'Full Stack', href: '/items' },
 ]
 
 function classNames(...classes) {
@@ -36,13 +49,13 @@ export default function Navbar() {
                                 <div className="flex-shrink-0 flex items-center">
                                     <img
                                         className="block lg:hidden h-8 w-auto"
-                                        src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
-                                        alt="Workflow"
+                                        src="/logos/vector/icon.svg"
+                                        alt="digital plasa"
                                     />
                                     <img
                                         className="hidden lg:block h-8 w-auto"
-                                        src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
-                                        alt="Workflow"
+                                        src="/logos/vector/defaultWhite.svg"
+                                        alt="digital plasa"
                                     />
                                 </div>
                                 <div className="hidden sm:block sm:ml-6">
@@ -89,36 +102,20 @@ export default function Navbar() {
                                                 leaveTo="transform opacity-0 scale-95"
                                             >
                                                 <Menu.Items className="origin-top-right z-50 absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
-                                                    <Menu.Item>
-                                                        {({ active }) => (
-                                                            <a
-                                                                href="#"
-                                                                className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                                                            >
-                                                                Your Profile
-                                                            </a>
-                                                        )}
-                                                    </Menu.Item>
-                                                    <Menu.Item>
-                                                        {({ active }) => (
-                                                            <a
-                                                                href="#"
-                                                                className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                                                            >
-                                                                Settings
-                                                            </a>
-                                                        )}
-                                                    </Menu.Item>
-                                                    <Menu.Item>
-                                                        {({ active }) => (
-                                                            <a
-                                                                href="#"
-                                                                className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                                                            >
-                                                                Sign out
-                                                            </a>
-                                                        )}
-                                                    </Menu.Item>
+                                                    {categories.map((category) => (
+                                                        <Menu.Item key={category.name}>
+                                                            {({ active }) => (
+                                                                <a
+                                                                    href={category.href}
+                                                                    className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                                                                >
+                                                                    {category.name}
+                                                                </a>
+                                                            )}
+                                                        </Menu.Item>
+                                                    ))}
+
+
                                                 </Menu.Items>
                                             </Transition>
                                         </Menu>
@@ -152,7 +149,7 @@ export default function Navbar() {
                                             <Menu.Item>
                                                 {({ active }) => (
                                                     <a
-                                                        href="#"
+                                                        href="/profile"
                                                         className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                                                     >
                                                         My Profile
@@ -162,7 +159,7 @@ export default function Navbar() {
                                             <Menu.Item>
                                                 {({ active }) => (
                                                     <a
-                                                        href="#"
+                                                        href="/dashboard"
                                                         className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                                                     >
                                                         Dashboard
@@ -172,7 +169,7 @@ export default function Navbar() {
                                             <Menu.Item>
                                                 {({ active }) => (
                                                     <a
-                                                        href="#"
+                                                        href="/create-product"
                                                         className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                                                     >
                                                         Add Product
@@ -241,11 +238,16 @@ export default function Navbar() {
                                         <Disclosure.Panel className="">
                                             <div className="space-y-4 pl-5">
                                                 {/* {section.options.map((option, optionIdx) => ( */}
-                                                    <div className="flex flex-col">
-                                                        <a href='#' className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium'>One</a>
-                                                        <a href='#' className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium'>Two</a>
-                                                        <a href='#' className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium'>Three</a>
-                                                    </div>
+                                                <div className="flex flex-col">
+                                                    {categories.map((category) => (
+                                                        <a
+                                                            key={category.name}
+                                                            href={category.href}
+                                                            className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-base font-medium'
+                                                        >{category.name}</a>
+
+                                                    ))}
+                                                </div>
                                                 {/* ))} */}
                                             </div>
                                         </Disclosure.Panel>
