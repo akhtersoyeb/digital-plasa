@@ -3,6 +3,7 @@ import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/solid'
+import Link from 'next/link'
 
 const navigation = [
     { name: 'Home', href: '/', current: false },
@@ -72,17 +73,17 @@ export default function Navbar() {
                                         {/* End of search bar */}
 
                                         {navigation.map((item) => (
-                                            <a
-                                                key={item.name}
-                                                href={item.href}
-                                                className={classNames(
-                                                    item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                                                    'px-3 py-2 rounded-md text-sm font-medium'
-                                                )}
-                                                aria-current={item.current ? 'page' : undefined}
-                                            >
-                                                {item.name}
-                                            </a>
+                                            <Link key={item.name} href={item.href}>
+                                                <a
+                                                    className={classNames(
+                                                        item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                                                        'px-3 py-2 rounded-md text-sm font-medium'
+                                                    )}
+                                                    aria-current={item.current ? 'page' : undefined}
+                                                >
+                                                    {item.name}
+                                                </a>
+                                            </Link>
                                         ))}
 
                                         {/* Categories dropdown */}
@@ -148,32 +149,38 @@ export default function Navbar() {
                                         <Menu.Items className="origin-top-right z-50 absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
                                             <Menu.Item>
                                                 {({ active }) => (
-                                                    <a
-                                                        href="/profile"
-                                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                                                    >
-                                                        My Profile
-                                                    </a>
+                                                    <Link href="/profile">
+                                                        <a
+
+                                                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                                                        >
+                                                            My Profile
+                                                        </a>
+                                                    </Link>
                                                 )}
                                             </Menu.Item>
                                             <Menu.Item>
                                                 {({ active }) => (
-                                                    <a
-                                                        href="/dashboard"
-                                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                                                    >
-                                                        Dashboard
-                                                    </a>
+                                                    <Link href="/dashboard">
+                                                        <a
+
+                                                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                                                        >
+                                                            Dashboard
+                                                        </a>
+                                                    </Link>
                                                 )}
                                             </Menu.Item>
                                             <Menu.Item>
                                                 {({ active }) => (
-                                                    <a
-                                                        href="/create-product"
-                                                        className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                                                    >
-                                                        Add Product
-                                                    </a>
+                                                    <Link href="/create-product">
+                                                        <a
+
+                                                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                                                        >
+                                                            Add Product
+                                                        </a>
+                                                    </Link>
                                                 )}
                                             </Menu.Item>
                                             <Menu.Item>

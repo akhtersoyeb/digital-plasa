@@ -4,7 +4,7 @@ export default function Footer() {
         <footer className="p-4 sm:p-6 bg-gray-800 mt-16">
             <div className="md:flex md:justify-between">
                 <div className="mb-6 md:mb-0">
-                    <a href="https://flowbite.com" target="_blank" className="flex items-center">
+                    <a href="https://flowbite.com"  className="flex items-center">
                         <img src="https://flowbite.com/docs/images/logo.svg" className="mr-4 h-10" alt="FlowBite Logo" />
                         <span className="self-center text-xl font-semibold whitespace-nowrap text-white">Logo</span>
                     </a>
@@ -14,11 +14,11 @@ export default function Footer() {
                         <h3 className="mb-6 text-sm font-semibold  uppercase text-white">Resources</h3>
                         <ul>
                             <li className="mb-4">
-                                <a href="https://flowbite.com" target="_blank"
+                                <a href="https://flowbite.com" 
                                     className="hover:underline text-gray-400">Flowbite</a>
                             </li>
                             <li>
-                                <a href="https://tailwindcss.com/" target="_blank" rel="nofollow"
+                                <a href="https://tailwindcss.com/"  rel="nofollow"
                                     className="hover:underline text-gray-400">Tailwind CSS</a>
                             </li>
                         </ul>
@@ -27,11 +27,11 @@ export default function Footer() {
                         <h3 className="mb-6 text-sm font-semibold uppercase text-white">Follow us</h3>
                         <ul>
                             <li className="mb-4">
-                                <a href="https://github.com/themesberg/flowbite" target="_blank"
+                                <a href="https://github.com/themesberg/flowbite" 
                                     className="hover:underline text-gray-400">Github</a>
                             </li>
                             <li>
-                                <a href="https://discord.gg/4eeurUVvTy" target="_blank"
+                                <a href="https://discord.gg/4eeurUVvTy" 
                                     className="hover:underline text-gray-400">Discord</a>
                             </li>
                         </ul>
@@ -40,10 +40,10 @@ export default function Footer() {
                         <h3 className="mb-6 text-sm font-semibold uppercase text-white">Legal</h3>
                         <ul>
                             <li className="mb-4">
-                                <a href="#" target="_blank" className="hover:underline text-gray-400">Privacy Policy</a>
+                                <a href="#"  className="hover:underline text-gray-400">Privacy Policy</a>
                             </li>
                             <li>
-                                <a href="#" target="_blank" className="hover:underline text-gray-400">Terms &amp; Conditions</a>
+                                <a href="#"  className="hover:underline text-gray-400">Terms &amp; Conditions</a>
                             </li>
                         </ul>
                     </div>
@@ -51,7 +51,7 @@ export default function Footer() {
             </div>
             <hr className="my-6  sm:mx-auto border-gray-700 lg:my-8" />
             <div className="sm:flex  sm:items-center sm:justify-between">
-                <span className="text-sm  sm:text-center text-gray-400">© 2022 <a href="https://flowbite.com" target="_blank"
+                <span className="text-sm  sm:text-center text-gray-400">© 2022 <a href="https://flowbite.com" 
                     className="hover:underline">Flowbite™</a>. All Rights Reserved. </span>
                 <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
                     <a href="#" className="text-gray-500  hover:text-white">
