@@ -115,8 +115,6 @@ export default function Navbar() {
                                                             )}
                                                         </Menu.Item>
                                                     ))}
-
-
                                                 </Menu.Items>
                                             </Transition>
                                         </Menu>

@@ -2,8 +2,9 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Newsletter from "../components/Newsletter";
 import Hero from "../components/Hero";
-import ProductCard from "../components/ProductCard";
-import SimpleCard from "../components/SimpleCard";
+import ProductCollection from "../components/ProductCollection";
+import StoreCard from "../components/StoreCard";
+import StoreCollection from "../components/StoreCollection";
 
 const products = [
   {
@@ -45,6 +46,53 @@ const products = [
 
 ]
 
+const stores = [
+  {
+    id: 1, 
+    name: 'Alapsis UIs', 
+    href: '#',
+    sellerName: 'Mars Twin',
+    bannerImageSrc: 'https://dummyimage.com/300x200',
+    storeImageSrc: 'https://dummyimage.com/200x200',
+    rating: '4.6', 
+    products: '45', 
+    sells: '342'
+  }, 
+  {
+    id: 2, 
+    name: 'Alapsis UIs', 
+    href: '#',
+    sellerName: 'Mars Twin',
+    bannerImageSrc: 'https://dummyimage.com/300x200',
+    storeImageSrc: 'https://dummyimage.com/200x200',
+    rating: '4.6', 
+    products: '45', 
+    sells: '342'
+  }, 
+  {
+    id: 3, 
+    name: 'Alapsis UIs', 
+    href: '#',
+    sellerName: 'Mars Twin',
+    bannerImageSrc: 'https://dummyimage.com/300x200',
+    storeImageSrc: 'https://dummyimage.com/200x200',
+    rating: '4.6', 
+    products: '45', 
+    sells: '342'
+  }, 
+  {
+    id: 4, 
+    name: 'Alapsis UIs', 
+    href: '#',
+    sellerName: 'Mars Twin',
+    bannerImageSrc: 'https://dummyimage.com/300x200',
+    storeImageSrc: 'https://dummyimage.com/200x200',
+    rating: '4.6', 
+    products: '45', 
+    sells: '342'
+  }
+]
+
 export default function Home() {
   return (
     <>
@@ -52,43 +100,13 @@ export default function Home() {
            
       <Hero />
 
-      <div className="container max-w-7xl px-5 mx-auto">
-        <h2 className="text-4xl font-bold text-gray-800">Popular Items Right Now</h2>
-        <br /> <hr /> <br />
-        <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-          {products.map((product) => (
-            <ProductCard key={product.id} name={product.name} href={product.href} imageSrc={product.imageSrc} price={product.price} />
-          ))}
-        </div>
-      </div>
+      <ProductCollection title="Trending Products" products={products} />
 
-      {/* <FeaturedItems />
-      <FeaturedItems isReversed={true} /> */}
+      <StoreCollection title="Featured Stores" stores={stores} />
+
+      <ProductCollection title="Latest" products={products} />
       <Newsletter />
-
-      <div className="container max-w-7xl px-5 mx-auto">
-        <h2 className="text-4xl font-bold text-gray-800">Latest products</h2>
-        <br /> <hr /> <br />
-        <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-          {products.map((product) => (
-            <ProductCard key={product.id} name={product.name} href={product.href} imageSrc={product.imageSrc} price={product.price} />
-          ))}
-        </div>
-      </div>
-
-      <div className="container mt-16 max-w-7xl px-5 mx-auto">
-        <h2 className="text-4xl font-bold text-gray-800">Top Sellers</h2>
-        <br /> <hr /> <br />
-        <div className="flex flex-wrap justify-between gap-y-3">
-          <SimpleCard />
-          <SimpleCard />
-          <SimpleCard />
-          <SimpleCard />
-          <SimpleCard />
-          <SimpleCard />
-        </div>
-      </div>
-
+      
 
       <Footer />
 

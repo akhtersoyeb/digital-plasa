@@ -1,4 +1,3 @@
-import React from 'react';
 
 export default function ProductCard({ name, href, imageSrc, price }) {
     return (
