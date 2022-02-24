@@ -15,27 +15,27 @@ export default function StoreCard({ name, href, sellerName, bannerImageSrc, stor
                 />
             </div>
             <div>
-                <div class="text-center -mt-10">
-                    <span class="border-4 border-white rounded-full mx-auto inline-block">
-                        <img class="rounded-full w-20 h-20" src={storeImageSrc} alt="store image" />
+                <div className="text-center -mt-10">
+                    <span className="border-4 border-white rounded-full mx-auto inline-block">
+                        <img className="rounded-full w-20 h-20" src={storeImageSrc} alt="store image" />
                     </span>
                 </div>
-                <p class="text-center font-bold">{name}</p>
-                <p class="text-xs text-center mb-5">{sellerName}</p>
+                <p className="text-center font-bold">{name}</p>
+                <p className="text-xs text-center mb-5">{sellerName}</p>
                 <hr />
-                <div class="flex justify-between px-10 py-5">
-                    <div class="text-center">
-                        <p class="font-bold">{products}</p>
-                        <p class="text-xs">Products</p>
+                <div className="flex justify-between px-10 py-5">
+                    <div className="text-center">
+                        <p className="font-bold">{products}</p>
+                        <p className="text-xs">Products</p>
                     </div>
-                    <div class="text-center">
-                        <p class="font-bold">{rating}</p>
-                        <p class="text-xs">Rating</p>
+                    <div className="text-center">
+                        <p className="font-bold">{rating}</p>
+                        <p className="text-xs">Rating</p>
 
                     </div>
-                    <div class="text-center">
-                        <p class="font-bold">{sells}</p>
-                        <p class="text-xs">Sells</p>
+                    <div className="text-center">
+                        <p className="font-bold">{sells}</p>
+                        <p className="text-xs">Sells</p>
 
                     </div>
                 </div>

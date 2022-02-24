@@ -55,7 +55,7 @@ export default function Example() {
   return (
     <>
     <Navbar />
-    <div className="container bg-slate-200 mx-auto rounded-xl my-20 py-10 px-5">
+    <div className="container max-w-7xl bg-slate-200 mx-auto rounded-xl my-20 py-10 px-2">
       <div>
         <div className="md:grid md:grid-cols-3 md:gap-6">
           <div className="md:col-span-1">
